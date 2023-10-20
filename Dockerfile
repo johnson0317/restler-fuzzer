@@ -27,4 +27,4 @@ COPY --from=builder /build /RESTler
 COPY ./script.sh .
 
 
-CMD ["./script.sh", "/app/openapi.json", "http://localhost:9000/api/v1/openapi.json", "localhost", "9000", "1"]
+CMD ["./script.sh", "http://localhost:9000/api/v1/openapi.json", "localhost", "9000", "1"]
