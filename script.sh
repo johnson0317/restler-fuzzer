@@ -14,5 +14,5 @@ fi
 /RESTler/restler/Restler fuzz-lean --host $2 --target_port $3 --grammar_file /Compile/grammar.py --dictionary_file /Compile/dict.json --settings /Compile/engine_settings.json --no_ssl & wait
 /RESTler/restler/Restler fuzz --host $2 --target_port $3 --grammar_file /Compile/grammar.py --dictionary_file /Compile/dict.json --settings /Compile/engine_settings.json --no_ssl --time_budget $4 & wait
 mkdir -p /artifacts & wait
+python3 merge-files.py & wait
 cp /Fuzz/RestlerResults/experiment*/logs/main.txt /artifacts/ & wait
-python3 merge_files.py

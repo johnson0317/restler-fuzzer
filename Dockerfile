@@ -25,6 +25,7 @@ RUN python3 -m pip install requests applicationinsights
 COPY --from=builder /build /RESTler
 
 COPY ./script.sh .
+COPY ./merge-files.py .
 
 
 CMD ["./script.sh", "http://localhost:9000/api/v1/openapi.json", "localhost", "9000", "1"]
